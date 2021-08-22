@@ -27,7 +27,7 @@
 	VALUES ('$id_proveedor', '$nombre', '$cantidad_est', '$direccion','$telefono','$precio_p')";
 	mysqli_query($conexion, $consulta);
 	mysqli_close($conexion);
-	header("Location: index.php");
+	header("Location: main.php");
 	}
 	
 	function eliminar($conexion){

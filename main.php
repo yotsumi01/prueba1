@@ -12,7 +12,7 @@
 <font color = "FABF6D">				
 <font face = "Arial MS">			
 <font size= 7>	
-<center> MATERIAL Terminado </center>
+<center> PROVEEDORES </center>
 </font>
 </font>
 </font>
@@ -24,6 +24,7 @@
 <body bg color = "A0CEFA">
 <body background = "peter2.jpg">
 
+
 <p><a href= "index.html"> FUCK GO BACK! </a></p>
 
 <a href= "main.php"> Proveedors </a>
@@ -34,28 +35,29 @@
 <p>
 <a href= "ford.php"> Ganancias </a>
 
-<form action= "conexion3.php" method="post">
-	<input type="text" name="id_materialt" placeholder="id_materialt">
-	<input type="text" name="nombre_mt" placeholder="nombre_mt">
-	<input type="text" name="cantidad" placeholder="cantidad">
-	<input type="text" name="precio" placeholder="precio">
-	<input type="text" name="id_materialb" placeholder="id_materialb">
+
+<form action= "conexion1.php" method="post">
+	<input type="text" name="id_proveedor" placeholder="id_proveedor">
+	<input type="text" name="nombre" placeholder="nombre">
+	<input type="text" name="cantidad_est" placeholder="cantidad_est">
+	<input type="text" name="direccion" placeholder="direccion">
+	<input type="text" name="telefono" placeholder="telefono">
+	<input type="text" name="precio_p" placeholder="precio_p">
 	<button type="submit" name="enviar">Subir</button>
 	<button type="submit" name="eliminar">Eliminar</button>
 </form>
 	<table border="5">
 		<thead>
-		<th>id_materialt</th>
-		<th>nombre_mt</th>
-		<th>cantidad</th>
-		<th>precio</th>
+		<th>id_proveedor</th>
+		<th>nombre</th>
+		<th>cantidad_est</th>
+		<th>direccion</th>
 		<th>telefono</th>
-		<th>id_materialb</th>
+		<th>precio_p</th>
 		</thead>
 		<tbody>
 		<?= cargarTabla($conexion); ?>
 		</tbody>
 	</table>
-
 </body>
 </html>

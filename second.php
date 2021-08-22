@@ -24,8 +24,9 @@
 <body bg color = "A0CEFA">
 <body background = "peter2.jpg">
 
+<p><a href= "index.html"> FUCK GO BACK! </a></p>
 
-<a href= "index.php"> Proveedors </a>
+<a href= "main.php"> Proveedors </a>
 <p>
 <a href= "second.php"> Material Bruto </a>
 <p>
