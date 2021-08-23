@@ -1,6 +1,6 @@
 <?php
 
-	$conexion = mysqli_connect("localhost", "yk2804", "12345" ,"pr_db01" ) or die(mysql_error($mysqli));
+	$conexion = mysqli_connect("yotsumi01.github.io", "yk2804", "12345" ,"pr_db01" ) or die(mysql_error($mysqli));
 	
 	diferencia($conexion);
 	
