@@ -1,5 +1,5 @@
-<?php include('conexion.php');?>
 <!DOCTYPE html>
+<?php $conexion = mysqli_connect("localhost", "yk2804", "12345" ,"pr_db01" ) or die(mysql_error($mysqli));?>
 <html lang="en" dir="ltr">
 <head>
 <meta  charset="utf-8">
@@ -42,14 +42,28 @@
 	<button type="submit" name="eliminar">Eliminar</button>
 </form>
 	<table border="5">
-		<thead>
-		<th>precio_mb</th>
-		<th>ganancia</th>
-		<th>id_materialt</th>
-		</thead>
-		<tbody>
-		<?= cargarTabla($conexion); ?>
-		</tbody>
+		<tr>
+			<td>precio_mb </td>
+			<td>ganancia </td>
+			<td>id_material </td>
+
+			
+		</tr>
+		<?php 
+		$sql= "SELECT *FROM ganancia";
+		$result=mysqli_query($conexion,$sql);
+		
+		while($mostrar=mysqli_fetch_array($result)){
+		
+		?>
+		<tr>
+			<td><?php echo $mostrar['precio_mb'] ?></td>
+			<td><?php echo $mostrar['ganancia'] ?> </td>
+			<td><?php echo $mostrar['id_materialt'] ?> </td>
+		</tr>
+		<?php
+		}
+		?>
 	</table>
 
 </body>

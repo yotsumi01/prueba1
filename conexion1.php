@@ -1,6 +1,6 @@
 <?php
 
-	$conexion = mysqli_connect("yotsumi01.github.io", "yk2804", "12345" ,"pr_db01" ) or die(mysql_error($mysqli));
+	$conexion = mysqli_connect("localhost", "yk2804", "12345" ,"pr_db01" ) or die(mysql_error($mysqli));
 	
 	diferencia($conexion);
 	
@@ -37,21 +37,6 @@
 	mysqli_close($conexion);
 	}
 	
-	function cargarTabla($conexion){
-	$query = "SELECT *FROM proveedor";
-	$resultado = mysqli_query($conexion, $consulta);
 	
-	while($fila = mysqli_fetch_array($resultado)){
-	echo "<tr>";
-	echo "<td>".$fila['id_proveedor'];
-	echo "<td>".$fila['nombre'];;
-	echo "<td>".$fila['cantidad_est'];;
-	echo "<td>".$fila['direccion'];;
-	echo "<td>".$fila['telefono'];;
-	echo "<td>".$fila['precio_p'];;
-	echo "<tr>";
-	}
-	mysqli_close($conexion);
-	}
 
 ?>

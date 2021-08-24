@@ -1,5 +1,5 @@
-<?php include('conexion.php');?>
 <!DOCTYPE html>
+<?php $conexion = mysqli_connect("localhost", "yk2804", "12345" ,"pr_db01" ) or die(mysql_error($mysqli));?>
 <html lang="en" dir="ltr">
 <head>
 <meta  charset="utf-8">
@@ -44,16 +44,32 @@
 	<button type="submit" name="eliminar">Eliminar</button>
 </form>
 	<table border="5">
-		<thead>
-		<th>id_materialb</th>
-		<th>nombre_material</th>
-		<th>cantidad</th>
-		<th>id_proveedor</th>
-		<th>fecha_llegada</th>
-		</thead>
-		<tbody>
-		<?= cargarTabla($conexion2); ?>
-		</tbody>
+		<tr>
+			<td>id_materialb</td>
+			<td>nombre_material </td>
+			<td>cantidad </td>
+			<td>id_proveedor </td>
+			<td>fecha_llegada </td>
+			
+		</tr>
+		<?php 
+		$sql= "SELECT *FROM materialb";
+		$result=mysqli_query($conexion,$sql);
+		
+		while($mostrar=mysqli_fetch_array($result)){
+		
+		?>
+		<tr>
+			<td><?php echo $mostrar['id_materialb'] ?></td>
+			<td><?php echo $mostrar['nombre_material'] ?> </td>
+			<td><?php echo $mostrar['cantidad'] ?> </td>
+			<td><?php echo $mostrar['id_proveedor'] ?> </td>
+			<td><?php echo $mostrar['fecha_llegada'] ?> </td>
+			
+		</tr>
+		<?php
+		}
+		?>
 	</table>
 
 </body>

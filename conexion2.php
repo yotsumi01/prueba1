@@ -1,6 +1,6 @@
 <?php
 
-	$conexion = mysqli_connect("yotsumi01.github.io", "yk2804", "12345" ,"pr_db01" ) or die(mysql_error($mysqli));
+	$conexion = mysqli_connect("localhost", "yk2804", "12345" ,"pr_db01" ) or die(mysql_error($mysqli));
 	
 	diferencia($conexion);
 	
@@ -37,19 +37,4 @@
 	mysqli_close($conexion);
 	}
 	
-	function cargarTabla($conexion){
-	$query = "SELECT *FROM materialb";
-	$resultado = mysqli_query($conexion, $consulta);
-	
-	while($fila = mysqli_fetch_array($resultado)){
-	echo "<tr>";
-	echo "<td>".$fila['id_materialb'];
-	echo "<td>".$fila['nombre_material'];;
-	echo "<td>".$fila['cantidad'];;
-	echo "<td>".$fila['id_proveedor'];;
-	echo "<td>".$fila['fecha_llegada'];;
-	echo "<tr>";
-	}
-	mysqli_close($conexion);
-	}
 ?>

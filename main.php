@@ -1,5 +1,5 @@
-<?php include('conexion.php');?>
 <!DOCTYPE html>
+<?php $conexion = mysqli_connect("localhost", "yk2804", "12345" ,"pr_db01" ) or die(mysql_error($mysqli));?>
 <html lang="en" dir="ltr">
 <head>
 <meta  charset="utf-8">
@@ -47,17 +47,32 @@
 	<button type="submit" name="eliminar">Eliminar</button>
 </form>
 	<table border="5">
-		<thead>
-		<th>id_proveedor</th>
-		<th>nombre</th>
-		<th>cantidad_est</th>
-		<th>direccion</th>
-		<th>telefono</th>
-		<th>precio_p</th>
-		</thead>
-		<tbody>
-		<?= cargarTabla($conexion); ?>
-		</tbody>
+		<tr>
+			<td>id_proveedor </td>
+			<td>nombre </td>
+			<td>cantidad_est </td>
+			<td>direccion </td>
+			<td>telefono </td>
+			<td>precio_p </td>
+		</tr>
+		<?php 
+		$sql= "SELECT *FROM proveedor";
+		$result=mysqli_query($conexion,$sql);
+		
+		while($mostrar=mysqli_fetch_array($result)){
+		
+		?>
+		<tr>
+			<td><?php echo $mostrar['id_proveedor'] ?></td>
+			<td><?php echo $mostrar['nombre'] ?> </td>
+			<td><?php echo $mostrar['cantidad_est'] ?> </td>
+			<td><?php echo $mostrar['direccion'] ?> </td>
+			<td><?php echo $mostrar['telefono'] ?> </td>
+			<td><?php echo $mostrar['precio_p'] ?> </td>
+		</tr>
+		<?php
+		}
+		?>
 	</table>
 </body>
 </html>
