@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php $conexion = mysqli_connect("localhost", "yk2804", "12345" ,"pr_db01" ) or die(mysql_error($mysqli));?>
+<?php $conexion = mysqli_connect(" github-pages", "yk2804", "12345" ,"pr_db01" ) or die(mysql_error($mysqli));?>
 <html lang="en" dir="ltr">
 <head>
 <meta  charset="utf-8">
